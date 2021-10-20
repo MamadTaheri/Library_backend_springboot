@@ -5,12 +5,12 @@ public class userModel {
     private int id;
     private String name;
     private String family;
-    private int socialNumber;
+    private Long socialNumber;
 
     public userModel() {
     }
 
-    public userModel(int id, String name, String family, int socialNumber) {
+    public userModel(int id, String name, String family, Long socialNumber) {
         this.id = id;
         this.name = name;
         this.family = family;
@@ -41,11 +41,11 @@ public class userModel {
         this.family = family;
     }
 
-    public int getSocialNumber() {
+    public Long getSocialNumber() {
         return socialNumber;
     }
 
-    public void setSocialNumber(int socialNumber) {
+    public void setSocialNumber(Long socialNumber) {
         this.socialNumber = socialNumber;
     }
 }
