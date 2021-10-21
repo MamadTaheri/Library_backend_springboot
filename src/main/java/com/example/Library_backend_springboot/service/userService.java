@@ -10,4 +10,8 @@ public interface userService {
 
     public userModel getSingleuser(String name, String family);
 
+    public String checkAuthentication1(String name, String family);
+
+    public String checkAuthentication2(userModel user);
+
 }

@@ -66,4 +66,21 @@ public class userServiceImpl implements userService {
 
         return new userModel(1, name, family, 6532584885L);
     }
+
+    @Override
+    public String checkAuthentication1(String name, String family) {
+        if (name.equals("mohammad") && family.equals("taheri")) {
+            return "Permission Granted!!!!";
+        } else
+            return "Wrong Credential Informations. Please Try again";
+    }
+
+    @Override
+    public String checkAuthentication2(userModel user) {
+        if ( user.getName().equals("mohammad") && user.getFamily().equals("taheri")) {
+            return "Permission Granted!!!!";
+        } else
+            return "Wrong Credential Informations. Please Try again";
+    }
+
 }

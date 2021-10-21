@@ -26,4 +26,15 @@ public class UserController {
         return userServiceObject.getSingleuser(name, family);
     }
 
+    @PostMapping( value = "/loginwithparam")
+    public String checkAuthentication1(@RequestParam(name = "name") String name,
+                                      @RequestParam(name = "family") String family) {
+        return userServiceObject.checkAuthentication1(name, family);
+    }
+
+    @PostMapping( value = "/loginwithbody")
+    public String checkAuthentication2(@RequestBody userModel user) {
+        return userServiceObject.checkAuthentication2(user);
+    }
+
 }
