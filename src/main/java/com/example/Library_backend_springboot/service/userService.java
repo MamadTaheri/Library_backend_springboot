@@ -8,4 +8,6 @@ public interface userService {
 
     public ArrayList<userModel> getAllusers();
 
+    public userModel getSingleuser(String name, String family);
+
 }

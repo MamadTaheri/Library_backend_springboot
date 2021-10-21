@@ -60,4 +60,10 @@ public class userServiceImpl implements userService {
 
         return usersArray;
     }
+
+    @Override
+    public userModel getSingleuser(String name, String family) {
+
+        return new userModel(1, name, family, 6532584885L);
+    }
 }
