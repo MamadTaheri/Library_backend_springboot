@@ -83,4 +83,9 @@ public class userServiceImpl implements userService {
             return "Wrong Credential Informations. Please Try again";
     }
 
+    @Override
+    public String saveNewUser(userModel user) {
+        return "new username was saved";
+    }
+
 }

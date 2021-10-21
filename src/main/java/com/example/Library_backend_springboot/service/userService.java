@@ -6,12 +6,14 @@ import java.util.ArrayList;
 
 public interface userService {
 
-    public ArrayList<userModel> getAllusers();
+    ArrayList<userModel> getAllusers();
 
-    public userModel getSingleuser(String name, String family);
+    userModel getSingleuser(String name, String family);
 
-    public String checkAuthentication1(String name, String family);
+    String checkAuthentication1(String name, String family);
 
-    public String checkAuthentication2(userModel user);
+    String checkAuthentication2(userModel user);
+
+    String saveNewUser(userModel user);
 
 }

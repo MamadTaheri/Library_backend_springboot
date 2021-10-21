@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
+@CrossOrigin(value = "http://localhost:3000/")
 @RequestMapping(value="/api")
 public class UserController {
 
     @Autowired
     userService userServiceObject;
 
-    @CrossOrigin(value = "http://localhost:3000/")
     @GetMapping( value = "/users")
     public ArrayList<userModel> users() {
         return userServiceObject.getAllusers();
@@ -35,6 +35,11 @@ public class UserController {
     @PostMapping( value = "/loginwithbody")
     public String checkAuthentication2(@RequestBody userModel user) {
         return userServiceObject.checkAuthentication2(user);
+    }
+
+    @PostMapping( value = "/savenewuser")
+    public String saveNewUser(@RequestBody userModel user) {
+        return userServiceObject.saveNewUser(user);
     }
 
 }
