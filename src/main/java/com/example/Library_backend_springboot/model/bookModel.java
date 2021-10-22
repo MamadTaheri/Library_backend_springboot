@@ -1,11 +1,25 @@
 package com.example.Library_backend_springboot.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class bookModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String category;
+
+    @Column(nullable = false)
     private String author;
+
+    @Column(nullable = false)
     private int publish_year;
 
     public bookModel() {

@@ -1,11 +1,15 @@
 package com.example.Library_backend_springboot.service;
 
 import com.example.Library_backend_springboot.model.bookModel;
+import com.example.Library_backend_springboot.model.userModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface bookService {
 
-    public ArrayList<bookModel> getAllBooks();
+    public List<bookModel> getAllBooks();
+
+    Integer saveNewBook(bookModel book);
 
 }
