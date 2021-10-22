@@ -1,10 +1,22 @@
 package com.example.Library_backend_springboot.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class userModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String family;
+
+    @Column(nullable = false)
     private Long socialNumber;
 
     public userModel() {
