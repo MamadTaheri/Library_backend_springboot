@@ -1,9 +1,14 @@
 package com.example.Library_backend_springboot.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@Setter
+@Getter
 public class userModel {
 
     @Id
@@ -29,35 +34,4 @@ public class userModel {
         this.socialNumber = socialNumber;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    public void setFamily(String family) {
-        this.family = family;
-    }
-
-    public Long getSocialNumber() {
-        return socialNumber;
-    }
-
-    public void setSocialNumber(Long socialNumber) {
-        this.socialNumber = socialNumber;
-    }
 }
