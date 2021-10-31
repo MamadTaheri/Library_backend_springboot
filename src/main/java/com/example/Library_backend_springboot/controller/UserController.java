@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "http://localhost:3000/")
@@ -23,6 +24,11 @@ public class UserController {
     @PostMapping( value = "/savenewuser")
     public Integer saveNewUser(@RequestBody userModel user) {
         return userServiceObject.saveNewUser(user);
+    }
+
+    @GetMapping(value = "/user")
+    public Optional<userModel> user(@RequestParam("id") Integer id){
+        return userServiceObject.getUser(id);
     }
 
 }

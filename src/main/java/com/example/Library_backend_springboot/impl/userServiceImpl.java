@@ -6,8 +6,8 @@ import com.example.Library_backend_springboot.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class userServiceImpl implements userService {
@@ -29,5 +29,11 @@ public class userServiceImpl implements userService {
             return 0;
         }
     }
+
+    @Override
+    public Optional<userModel> getUser(Integer id) {
+        return userRepositoryObj.findById(id);
+    }
+
 
 }
