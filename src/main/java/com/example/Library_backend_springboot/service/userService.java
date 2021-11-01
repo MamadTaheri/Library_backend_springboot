@@ -13,4 +13,5 @@ public interface userService {
 
     Optional<userModel> getUser(Integer id);
 
+    String updateUser(userModel userModel);
 }

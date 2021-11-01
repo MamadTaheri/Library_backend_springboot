@@ -35,5 +35,18 @@ public class userServiceImpl implements userService {
         return userRepositoryObj.findById(id);
     }
 
-
+    @Override
+    public String updateUser(userModel userModel) {
+        try {
+            userModel tempUserModel = userRepositoryObj.getById(userModel.getId());
+            tempUserModel.setName(userModel.getName());
+            tempUserModel.setFamily(userModel.getFamily());
+            tempUserModel.setSocialNumber(userModel.getSocialNumber());
+            userRepositoryObj.save(userModel);
+            return "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+    }
 }

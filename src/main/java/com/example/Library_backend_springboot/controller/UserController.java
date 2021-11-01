@@ -31,4 +31,9 @@ public class UserController {
         return userServiceObject.getUser(id);
     }
 
+    @PostMapping(value = "/updateuser")
+    public String user(@RequestBody userModel user) {
+        return userServiceObject.updateUser(user);
+    }
+
 }
