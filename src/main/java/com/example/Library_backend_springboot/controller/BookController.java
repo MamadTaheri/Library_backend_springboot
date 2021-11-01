@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "http://localhost:3000/")
@@ -24,6 +25,11 @@ public class BookController {
     @PostMapping( value = "/savenewbook")
     public Integer saveNewUser(@RequestBody bookModel book) {
         return bookServiceObject.saveNewBook(book);
+    }
+
+    @GetMapping(value = "/book")
+    public Optional<bookModel> user(@RequestParam("id") Integer id){
+        return bookServiceObject.getBook(id);
     }
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class bookServiceImpl implements bookService {
@@ -29,5 +30,10 @@ public class bookServiceImpl implements bookService {
         } catch (Exception e) {
             return 0;
         }
+    }
+
+    @Override
+    public Optional<bookModel> getBook(Integer id) {
+        return bookRepositoryObj.findById(id);
     }
 }
