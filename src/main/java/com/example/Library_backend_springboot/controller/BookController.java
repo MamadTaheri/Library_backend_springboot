@@ -32,4 +32,9 @@ public class BookController {
         return bookServiceObject.getBook(id);
     }
 
+    @PostMapping(value = "/updatebook")
+    public String book(@RequestBody bookModel book) {
+        return bookServiceObject.updateBook(book);
+    }
+
 }

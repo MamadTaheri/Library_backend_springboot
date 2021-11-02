@@ -42,7 +42,7 @@ public class userServiceImpl implements userService {
             tempUserModel.setName(userModel.getName());
             tempUserModel.setFamily(userModel.getFamily());
             tempUserModel.setSocialNumber(userModel.getSocialNumber());
-            userRepositoryObj.save(userModel);
+            userRepositoryObj.save(tempUserModel);
             return "ok";
         } catch (Exception e) {
             e.printStackTrace();
