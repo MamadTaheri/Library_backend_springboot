@@ -53,4 +53,20 @@ public class bookServiceImpl implements bookService {
             return "error";
         }
     }
+
+    @Override
+    public String amanatBook(String[] inputArray) {
+        try {
+            String bookId = inputArray[0];
+            String userId = inputArray[1];
+            bookModel tempBookModel = bookRepositoryObj.getById(Integer.parseInt(bookId));
+            tempBookModel.setAmanat_status(1);
+            tempBookModel.setUser(Integer.parseInt(userId));
+            bookRepositoryObj.save(tempBookModel);
+            return "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+    }
 }

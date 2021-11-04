@@ -16,4 +16,6 @@ public interface bookService {
     Optional<bookModel> getBook(Integer id);
 
     String updateBook(bookModel bookModel);
+
+    String amanatBook(String[] inputArray);
 }

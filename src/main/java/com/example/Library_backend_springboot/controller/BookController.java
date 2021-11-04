@@ -36,5 +36,9 @@ public class BookController {
     public String book(@RequestBody bookModel book) {
         return bookServiceObject.updateBook(book);
     }
+    @PostMapping(value = "/bookout")
+    public String data(@RequestBody String[] inputArray) {
+        return bookServiceObject.amanatBook(inputArray);
+    }
 
 }

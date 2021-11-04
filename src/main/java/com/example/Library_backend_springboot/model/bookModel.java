@@ -27,6 +27,12 @@ public class bookModel {
     @Column(nullable = false)
     private int publish_year;
 
+    @Column(nullable = true)
+    private int amanat_status;
+
+    @Column(nullable = true)
+    private int user;
+
     public bookModel() {
     }
 
