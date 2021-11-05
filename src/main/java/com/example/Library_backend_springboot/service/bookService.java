@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface bookService {
 
-    public List<bookModel> getAllBooks();
+    List<bookModel> getAllBooks();
 
     Integer saveNewBook(bookModel book);
 
@@ -17,5 +17,5 @@ public interface bookService {
 
     String updateBook(bookModel bookModel);
 
-    String amanatBook(String[] inputArray);
+    String bookOut(String[] inputArray);
 }

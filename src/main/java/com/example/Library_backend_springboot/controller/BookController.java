@@ -38,7 +38,7 @@ public class BookController {
     }
     @PostMapping(value = "/bookout")
     public String data(@RequestBody String[] inputArray) {
-        return bookServiceObject.amanatBook(inputArray);
+        return bookServiceObject.bookOut(inputArray);
     }
 
 }

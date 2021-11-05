@@ -55,7 +55,7 @@ public class bookServiceImpl implements bookService {
     }
 
     @Override
-    public String amanatBook(String[] inputArray) {
+    public String bookOut(String[] inputArray) {
         try {
             String bookId = inputArray[0];
             String userId = inputArray[1];
