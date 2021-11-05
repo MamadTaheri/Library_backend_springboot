@@ -18,4 +18,6 @@ public interface bookService {
     String updateBook(bookModel bookModel);
 
     String bookOut(String[] inputArray);
+
+    String bookIn(Integer bookId);
 }

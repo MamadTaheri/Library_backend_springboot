@@ -6,6 +6,7 @@ import com.example.Library_backend_springboot.service.bookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,8 +38,13 @@ public class BookController {
         return bookServiceObject.updateBook(book);
     }
     @PostMapping(value = "/bookout")
-    public String data(@RequestBody String[] inputArray) {
+    public String bookOut(@RequestBody String[] inputArray) {
         return bookServiceObject.bookOut(inputArray);
+    }
+
+    @PostMapping(value = "bookin")
+    public String bookIn(@RequestBody String[] inputArray) {
+        return bookServiceObject.bookIn(Integer.valueOf(inputArray[0]));
     }
 
 }

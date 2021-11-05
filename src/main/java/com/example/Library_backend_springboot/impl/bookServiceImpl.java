@@ -69,4 +69,18 @@ public class bookServiceImpl implements bookService {
             return "error";
         }
     }
+
+    @Override
+    public String bookIn(Integer bookId) {
+        try {
+            bookModel tempBookModel = bookRepositoryObj.getById(bookId);
+            tempBookModel.setAmanat_status(0);
+            tempBookModel.setUser(0);
+            bookRepositoryObj.save(tempBookModel);
+            return "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+    }
 }
