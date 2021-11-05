@@ -50,7 +50,7 @@ public class bookServiceImpl implements bookService {
             return "ok";
         } catch (Exception e) {
             e.printStackTrace();
-            return "error";
+            return "server error";
         }
     }
 
@@ -66,7 +66,7 @@ public class bookServiceImpl implements bookService {
             return "ok";
         } catch (Exception e) {
             e.printStackTrace();
-            return "error";
+            return "server error";
         }
     }
 
@@ -80,7 +80,7 @@ public class bookServiceImpl implements bookService {
             return "ok";
         } catch (Exception e) {
             e.printStackTrace();
-            return "error";
+            return "server error";
         }
     }
 }

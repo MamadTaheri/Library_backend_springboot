@@ -46,7 +46,7 @@ public class userServiceImpl implements userService {
             return "ok";
         } catch (Exception e) {
             e.printStackTrace();
-            return "error";
+            return "server error";
         }
     }
 }
