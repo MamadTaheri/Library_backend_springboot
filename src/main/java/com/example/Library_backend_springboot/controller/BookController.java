@@ -18,31 +18,31 @@ public class BookController {
     @Autowired
     bookService bookServiceObject;
 
-    @GetMapping( value = "/books")
+    @GetMapping("/books")
     public List<bookModel> getAllBooks() {
         return bookServiceObject.getAllBooks();
     }
 
-    @PostMapping( value = "/savenewbook")
+    @PostMapping("/savenewbook")
     public Integer saveNewUser(@RequestBody bookModel book) {
         return bookServiceObject.saveNewBook(book);
     }
 
-    @GetMapping(value = "/book")
+    @GetMapping("/book")
     public Optional<bookModel> user(@RequestParam("id") Integer id){
         return bookServiceObject.getBook(id);
     }
 
-    @PostMapping(value = "/updatebook")
+    @PostMapping("/updatebook")
     public String book(@RequestBody bookModel book) {
         return bookServiceObject.updateBook(book);
     }
-    @PostMapping(value = "/bookout")
+    @PostMapping("/bookout")
     public String bookOut(@RequestBody String[] inputArray) {
         return bookServiceObject.bookOut(inputArray);
     }
 
-    @PostMapping(value = "bookin")
+    @PostMapping("bookin")
     public String bookIn(@RequestBody String[] inputArray) {
         return bookServiceObject.bookIn(Integer.valueOf(inputArray[0]));
     }

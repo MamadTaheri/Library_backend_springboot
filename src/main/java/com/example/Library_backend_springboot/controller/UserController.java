@@ -16,22 +16,22 @@ public class UserController {
     @Autowired
     userService userServiceObject;
 
-    @GetMapping( value = "/users")
+    @GetMapping("/users")
     public List<userModel> users() {
         return userServiceObject.getAllusers();
     }
 
-    @PostMapping( value = "/savenewuser")
+    @PostMapping("/savenewuser")
     public Integer saveNewUser(@RequestBody userModel user) {
         return userServiceObject.saveNewUser(user);
     }
 
-    @GetMapping(value = "/user")
+    @GetMapping("/user")
     public Optional<userModel> user(@RequestParam("id") Integer id){
         return userServiceObject.getUser(id);
     }
 
-    @PostMapping(value = "/updateuser")
+    @PostMapping("/updateuser")
     public String user(@RequestBody userModel user) {
         return userServiceObject.updateUser(user);
     }
