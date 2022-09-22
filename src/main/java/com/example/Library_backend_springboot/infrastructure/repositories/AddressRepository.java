@@ -1,0 +1,9 @@
+package com.example.Library_backend_springboot.infrastructure.repositories;
+
+import com.example.Library_backend_springboot.infrastructure.entities.AddressEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AddressRepository extends JpaRepository<AddressEntity, Long> {
+}

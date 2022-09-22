@@ -5,6 +5,7 @@ import com.example.Library_backend_springboot.services.book.IBookService;
 import com.example.Library_backend_springboot.services.dto.BookDto;
 import com.example.Library_backend_springboot.services.dto.BookPostDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,10 +25,16 @@ public class BookController {
     }
 //
     @PostMapping()
-    public boolean saveNewUser(@RequestBody BookPostDto book) {
-        return bookService.saveNewBook(book);
+    public ResponseEntity<String> saveNewUser(@RequestBody BookPostDto book) throws Exception {
+        boolean saveResult = bookService.saveNewBook(book);
+        if(saveResult)
+            return ResponseEntity.ok("Save Successful");
+        else
+            throw new Exception("Error on save");
+
     }
-//
+
+
 //    @GetMapping("/book")
 //    public Optional<BookEntity> user(@RequestParam("id") Integer id){
 //        return bookServiceObject.getBook(id);
